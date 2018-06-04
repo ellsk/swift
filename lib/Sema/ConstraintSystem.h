@@ -3109,11 +3109,6 @@ public:
       if (CountScopes < TypeCounter)
         return false;
 
-      // If we haven't explored a relatively large number of possibilities
-      // yet, continue.
-      if (CountScopes <= 16 * 1024)
-        return false;
-
       // Clearly exponential
       if (TypeCounter < 32 && CountScopes > (1U << TypeCounter))
         return true;
